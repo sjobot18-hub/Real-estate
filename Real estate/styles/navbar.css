@@ -1,0 +1,112 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-icon {
+    display: none; /* hide hamburger on laptop */
+}
+
+#navbar{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-shadow: 2px 2px 3px gray;
+    background: transparent;
+    backdrop-filter: blur(10px); /* blur background behind*/
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#navbar nav ul{
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    align-items: center;
+}
+
+#navbar nav ul a{
+    color: black;
+    text-decoration: none;
+    font-size: 17px ;
+}
+
+#navbar nav ul a:hover{
+    color: #07553b;
+}
+
+#navbar .active{
+    color: #07553b;
+}
+
+#navbar #contact button{
+    border: 1px solid #07553b;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #07553b;
+}
+
+#six{
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(2, 85, 50);
+    font-weight: 1000;
+}
+
+#navbar #contact button:hover{
+    background-color: white;
+    color: #07553b;
+}
+
+
+
+
+
+/* Mobile styles */
+
+    /* MOBILE ONLY */
+@media screen and (max-width: 768px) {
+
+    .menu-icon {
+        display: block; /* show hamburger icon */
+    }
+
+    #navbar nav {
+        max-height: 0;          /* hidden by default */
+        overflow: hidden;       /* hide content */
+        transition: max-height 1s ease-in-out; /* smooth slide */
+        flex-direction: column;
+        background: whitesmoke;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #navbar nav ul {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    #navbar nav.show {
+        max-height: 500px;
+    }
+
+}
